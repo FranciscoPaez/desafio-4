@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #08bf42;
+    background-image: linear-gradient(62deg, #08bf42 0%, #035611 100%);
+}
+
+#grilla{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "productos productos productos"
+    "productos productos productos"
+    "footer footer footer";
+
+    grid-template-rows: 100px 1fr 1fr 75px;
+    grid-template-columns: 20% auto 15%;
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    height: 100vh;
+
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+
+header{
+    grid-area: header;
+    font-weight: 700;
+    background: #fff;
+}
+
+.container{
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+.header--container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 0; 
+}
+
+.header--nav--ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem; /*5 px*/
+}
+
+.header--nav--ul--li{
+    padding: 0.5rem 1rem;
+    font-weight: 300;
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.header--nav--ul--li a {
+    color: #035611;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 0.3rem 1rem;
+    border-radius: 1.25rem;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+.header--nav--ul--li a:hover{
+    background: #035611;
+    color: #fff;
+}
+
+
+.header--logo img{
+    width: 100%;
+    cursor: pointer;
+    animation-name: rotation;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+#productos{
+    grid-area: productos;
+}
+
+#productos h2{
+    text-align: center;
+    padding: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#productos .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8rem;
+}
+
+#productos .paragraph{
+    background: #fff;
+}
+
+#productos p{
+    color: #000;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-left: 26rem;
+    margin-right: 26rem;
+    text-align: center;
+}
+
+
+footer{
+    grid-area: footer;
+    text-align: center;
+    padding: 2rem;
+}
+
+.media-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.media-icons a{
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
+}
+.media-icons a:not(:last-child){
+    margin-right: 60px;
+}
+.media-icons a:hover{
+    transform: scale(1.9);
+    color: #035611;
+}
+
+@keyframes rotation{
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+}
